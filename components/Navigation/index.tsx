@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
+//import Link from 'next/link'
 import { ReactNode } from 'react'
 import { List, Nav } from './styles'
 
@@ -21,9 +21,7 @@ type NavAnchor ={
 
 function NavAnchor ({ path, children }: NavAnchor){
   return (
-    <Link href={path}>
-      <Nav>{children}</Nav>
-    </Link>
+      <Nav href={path}>{children}</Nav> 
   )
 }
 
