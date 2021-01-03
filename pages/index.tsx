@@ -1,22 +1,17 @@
 import Head from 'next/head'
+import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    < >
       <Head>
         <title>Setup site next</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className={styles.title}>
-         <a href="#">Next Website </a>
-        </h1>
-
-    
-
-       
+        <Header/>
       </main>
 
       <footer className={styles.footer}>
@@ -27,6 +22,6 @@ export default function Home() {
           Powered by Diego dev
         </a>
       </footer>
-    </div>
+    </>
   )
 }
