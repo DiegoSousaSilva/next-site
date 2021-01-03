@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { Container, A } from './styles';
+import { Container, Link } from './styles';
 
 const Footer: React.FC = () => {
   return (
     <Container>
-        <A
+        <Link
           href="https://github.com/DiegoSousaSilva"
           target="_blank"
         >
-          Powered by Diego dev</A>
+          Powered by Diego dev</Link>
     </Container>
   );
 };

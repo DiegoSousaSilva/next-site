@@ -10,7 +10,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const A = styled.a`
+export const Link = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;

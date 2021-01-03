@@ -13,10 +13,8 @@ export const List = styled.ul`
 export const Nav = styled.a`
   text-decoration: underline 2px;
 
-  & :hover{
-    text-decoration: underline dotted 2px;
-  }
-  & :focus{
+  & :hover :focus{
+    cursor: pointer;
     text-decoration: underline dotted 2px;
   }
 `;
