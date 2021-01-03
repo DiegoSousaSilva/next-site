@@ -3,6 +3,7 @@ import { InferGetStaticPropsType } from 'next'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import Navigation from '@components/Navigation'
+import {getPostList} from '@shared/util'
 
 type PostList = string[]
 
