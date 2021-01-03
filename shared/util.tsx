@@ -3,15 +3,16 @@ import path from 'path';
  
 export function getPostList(){
   try {
-    const postDir = path.join(process.cwd(), 'pages/post');
+    const postsDir = path.join(process.cwd(), 'pages/post');
 
     return fs 
-      .readdirSync(postDir)
+      .readdirSync(postsDir)
       .map(filename =>(
         filename.substring(0, filename.indexOf('.'))
       ))
-  }catch{
-    console.warn('There ara not posts!');
+  }
+    catch{
+    console.warn('💥 There are not posts!');
     return []
   }
 }

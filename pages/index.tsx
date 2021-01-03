@@ -4,6 +4,7 @@ import Footer from '@components/Footer'
 import Header from '@components/Header'
 import Navigation from '@components/Navigation'
 import {getPostList} from '@shared/util'
+import Link from 'next/link'
 
 type PostList = string[]
 
@@ -11,19 +12,21 @@ export default function Home({posts}:InferGetStaticPropsType<typeof getStaticPro
   return (
     <>
       <Head>
-        <title>Next Website</title>
+        <title>Next Website 🔥</title>
       </Head>
 
       <main>
         <Navigation/>
         <Header/>
-        {posts.length > 0 &&(
+        {posts.length > 0 && (
           <ul>
-            {posts.map((slug)=>{
+            {posts.map((slug)=>(
               <li key={slug}>
-                {slug.replaceAll('-', ' ')}
+                <Link href={`post/${slug}`}>
+                  <a>{slug.replace(/-/g, ' ')}</a>
+                </Link>
               </li>
-            })}
+            ))}
           </ul>
         )}
       </main>

@@ -21,7 +21,7 @@ type NavAnchor ={
 
 function NavAnchor ({ path, children }: NavAnchor){
   return (
-      <Nav href={path}>{children}</Nav> 
+      <Nav href={path}>{children}</Nav>
   )
 }
 

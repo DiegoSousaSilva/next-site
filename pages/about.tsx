@@ -1,6 +1,6 @@
 import Navgation from '@components/Navigation'
 
-export default function About (){
+const About = () =>{
   return (
     <>
       <Navgation/>
@@ -10,3 +10,5 @@ export default function About (){
     </>
   )
 }
+
+export default About;
