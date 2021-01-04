@@ -1,8 +1,16 @@
+import Image from 'next/image'
+
 const Hello = () =>{
   return (
-      <div>
+      <article>
         <h1>Hello from the fist post</h1>
-      </div>
+        <Image
+          src="/post/first-post/luffy.jpg"
+          height={427}
+          width={640}
+        />
+        <p>Monkey D. Luffy</p>
+      </article>
   )
 }
 
