@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { InferGetStaticPropsType } from 'next'
 import Footer from '@components/Footer'
 import Header from '@components/Header'

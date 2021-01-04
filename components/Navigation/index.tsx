@@ -1,48 +1,61 @@
-import { useRouter } from 'next/router'
-//import Link from 'next/link'
-import { ReactNode } from 'react'
-import { List, Nav } from './styles'
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
-const LINK =[
-  {
-    name: "Home",
-    path: '/'
-  },
-  {
-    name: 'About',
-    path: '/about'
-  }
-]
+const Navigation = (props) => {
 
-type NavAnchor ={
-  path: string
-  children: ReactNode
-}
+  const [isOpen, setIsOpen] = useState(false);
 
-function NavAnchor ({ path, children }: NavAnchor){
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-      <Nav href={path}>{children}</Nav>
-  )
-}
-
-const Navigation: React.FC = () => {
-  const {pathname} = useRouter()
-  return (
-      <nav>
-        <List>
-          {
-            LINK.map(({name, path})=>(
-            <li key={path}>
-              {path == pathname 
-              ? <span>{name}</span>
-              : <NavAnchor path={path}>{name}</NavAnchor>
-              }
-            </li>
-            ))
-          }
-        </List>
-      </nav>
+    <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Home</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/about">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="https://github.com/DiegoSousaSilva/next-site">GitHub</NavLink>
+            </NavItem>
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Options
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  Option 1
+                </DropdownItem>
+                <DropdownItem>
+                  Option 2
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem>
+                  Reset
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </Nav>
+          <NavbarText>Diego - Dev</NavbarText>
+        </Collapse>
+      </Navbar>
+    </div>
   );
-};
+}
 
 export default Navigation;
